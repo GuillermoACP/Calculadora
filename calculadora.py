@@ -1,7 +1,6 @@
 from funciones import *
 
 def calculadora():
-    resultado = None
 
     while True:
         menu()
@@ -12,14 +11,14 @@ def calculadora():
             break
         elif opcion == '1':
             resultado = suma_varios()
+        elif opcion == '2':
+            resultado = resta_varios()
 
         else:
             print('Numero invalido')
             continue
         
-        if resultado is not None:
-            print(resultado)
-            input("Presiona ENTER para volver al menú...")
+
 
 
 

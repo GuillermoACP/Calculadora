@@ -1,13 +1,5 @@
 import math
 
-def pedir_numeros(mensaje):
-    while True:
-        entrada = input(mensaje)
-        try:
-            return float(entrada)
-        except ValueError:
-            print('Entrada no valida.')
-
 def menu():
     print('MENU')
     print('1. Suma')
@@ -19,18 +11,47 @@ def menu():
     print('0. Salir')
            
 def suma_varios():
-    numeros = []
+    resultado = None
     while True:
-        entrada = input('Ingresa un numero o = ')
+        entrada = input('Ingresa numero o = para sumar: ')
         if entrada == '=':
             break
         try:
-            numeros.append(float(entrada))
+            numero = float(entrada)
+            if resultado is None: 
+                resultado = numero
+                print(f"Total = {resultado}")
+            else:
+                print(f"{resultado} + {numero} = {resultado + numero}")
+                resultado += numero
         except ValueError:
             print('Entrada no valida.')
-    return sum(numeros)
 
-def raiz_cuadrada(a):
-    return math.sqrt(a)
+    if resultado is not None:
+        print(f"Resultado final: {resultado}")
+        input("Presiona ENTER para volver al menú...")
+    return resultado
 
 
+def resta_varios():
+    resultado = None
+    while True:
+        entrada = input('Ingresa un numero o = para restar: ')
+        if entrada == '=':
+            break
+        try:
+            numero = float(entrada)
+            if resultado is None:
+                resultado = numero
+                print(f"Total = {resultado}")
+            else:
+                print(f"{resultado} - {numero} = {resultado - numero}")
+                resultado -= numero
+        except ValueError:
+            print("Entrada no valida.")
+
+    if resultado is not None:
+        print(f"Resultado final: {resultado}")
+        input("Presiona ENTER para volver al menú...")
+    return resultado
+        
