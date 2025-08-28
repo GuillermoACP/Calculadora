@@ -13,6 +13,8 @@ def calculadora():
             resultado = suma_varios()
         elif opcion == '2':
             resultado = resta_varios()
+        elif opcion == '6':
+            resultado = raiz_cuadrada()
 
         else:
             print('Numero invalido')

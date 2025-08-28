@@ -54,4 +54,18 @@ def resta_varios():
         print(f"Resultado final: {resultado}")
         input("Presiona ENTER para volver al menú...")
     return resultado
-        
+
+def raiz_cuadrada():
+    while True:
+        entrada = input('Ingresa un numero o = para salir: ')
+        if entrada == '=':
+            break
+        try:
+            numero = float(entrada)
+            if numero < 0:
+                print('Error: No se puede obtener raiz de un negativo.')
+                continue
+            raiz = math.sqrt(numero)
+            print(f"√{numero} = {raiz}")
+        except:
+            print ('Entrada no valida.')            
